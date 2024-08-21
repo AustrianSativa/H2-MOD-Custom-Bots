@@ -16,7 +16,6 @@
 
 init()
 {
-    // Dvars aus der server.cfg laden und in Variablen speichern
     level.dmBotCount = 0;
     level.warBotCount = 0;
     level.sdBotCount = 0;
@@ -27,7 +26,6 @@ init()
     level.hpBotCount = 0;
     level.gunBotCount = 0;
 
-    // Dvars aus der server.cfg für die Bot-Anzahl auslesen
     level.dmMaxBots = int(getDvar("dm_bot_count"));
     level.warMaxBots = int(getDvar("war_bot_count"));
     level.sdMaxBots = int(getDvar("sd_bot_count"));
@@ -86,7 +84,6 @@ init()
 
 callbackplayerdisconnect_stub(reason)
 {
-    // Aktuellen Spielmodus ermitteln
     gameType = getDvar("g_gametype");
 
     // Reduziert den Bot-Count und spawnt neue Bots, falls erforderlich
@@ -126,37 +123,26 @@ callbackplayerdisconnect_stub(reason)
 
 handleBotDisconnect(gameType, maxBots)
 {
-    // Reduziert den Bot-Count, wenn ein Bot entfernt wird
     if (gameType == "dm" && level.dmBotCount > 0) {
         level.dmBotCount--;
-        updateBotCountHud("dm"); // HUD aktualisieren
     } else if (gameType == "war" && level.warBotCount > 0) {
         level.warBotCount--;
-        updateBotCountHud("war");
     } else if (gameType == "sd" && level.sdBotCount > 0) {
-        level.sdBotCount--;
-        updateBotCountHud("sd");
+        level.sdBotCount--; 
     } else if (gameType == "dom" && level.domBotCount > 0) {
-        level.domBotCount--;
-        updateBotCountHud("dom");
+        level.domBotCount--;  
     } else if (gameType == "conf" && level.confBotCount > 0) {
-        level.confBotCount--;
-        updateBotCountHud("conf");
+        level.confBotCount--;  
     } else if (gameType == "sab" && level.sabBotCount > 0) {
         level.sabBotCount--;
-        updateBotCountHud("sab");
     } else if (gameType == "koth" && level.kothBotCount > 0) {
         level.kothBotCount--;
-        updateBotCountHud("koth");
     } else if (gameType == "hp" && level.hpBotCount > 0) {
         level.hpBotCount--;
-        updateBotCountHud("hp");
     } else if (gameType == "gun" && level.gunBotCount > 0) {
         level.gunBotCount--;
-        updateBotCountHud("gun");
     }
 
-    // Spawnt einen Bot, wenn weniger als die Maximalzahl vorhanden ist
     if (gameType == "dm" && level.dmBotCount < maxBots) {
         spawnBots(1, "dm");
     } else if (gameType == "war" && level.warBotCount < maxBots) {
@@ -206,27 +192,6 @@ spawnBots(amount, gameType)
         if (gameType == "koth") level.kothBotCount += botsToSpawn;
         if (gameType == "hp") level.hpBotCount += botsToSpawn;
         if (gameType == "gun") level.gunBotCount += botsToSpawn;
-        updateBotCountHud(gameType); // HUD aktualisieren
-    }
-}
-
-updateBotCountHud(gameType)
-{
-    if (isDefined(level.botCountHud)) {
-        currentCount = 0;
-        if (gameType == "dm") currentCount = level.dmBotCount;
-        if (gameType == "war") currentCount = level.warBotCount;
-        if (gameType == "sd") currentCount = level.sdBotCount;
-        if (gameType == "dom") currentCount = level.domBotCount;
-        if (gameType == "conf") currentCount = level.confBotCount;
-        if (gameType == "sab") currentCount = level.sabBotCount;
-        if (gameType == "koth") currentCount = level.kothBotCount;
-        if (gameType == "hp") currentCount = level.hpBotCount;
-        if (gameType == "gun") currentCount = level.gunBotCount;
-
-        level.botCountHud setText("Bots (" + gameType + "): " + currentCount);
-        level.botCountHud fadeOverTime(0.5);
-        level.botCountHud.alpha = 1.0;
     }
 }
 
