@@ -4,7 +4,7 @@ V1 Custom Bots
 
 A CustomBot.gsc where you can set the bots individually for each gamemode
 
-ADD THIS TO SERVER.cfg !!!
+#ADD THIS TO SERVER.cfg !!!
 
 set dm_bot_count "9"       // Free-for-all
 
