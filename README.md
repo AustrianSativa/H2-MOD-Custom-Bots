@@ -1,6 +1,6 @@
 # H2-MOD-Custom-Bots#
 
-V1 Custom Bots
+V1 Custom Bots 👌
 
 A CustomBot.gsc where you can set the bots individually for each gamemode
 
