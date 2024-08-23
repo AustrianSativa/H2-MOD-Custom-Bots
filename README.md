@@ -1,27 +1,47 @@
 # H2-MOD-Custom-Bots#
 
-V1 Custom Bots 👌
+V1: Custom Bots 👌
 
 A CustomBot.gsc where you can set the bots individually for each gamemode
 
+V1.1
+
+
+
 Drag intro Call of Duty Modern Warfare Remastered 2\user_scripts\mp
 
-#ADD ALL THIS TO SERVER.cfg !!!
 
-set dm_bot_count "9"       // Free-for-all
+//////////////////////////////////////////////////
+// BOT COUNT GAMETYPE SETTINGS                  //
+// ADD ALL THIS TO SERVER.cfg !!!               //
+//////////////////////////////////////////////////
 
-set war_bot_count "18"     // Team Deathmatch
+// Bot Count HUD
+set enable_botHud "1"        // Enable Bot Count Hud
 
-set sd_bot_count "18"      // Search and Destroy
+// Free-for-all dm
+set dm_bot_count "5"         // Number of bots for Free-for-all
 
-set dom_bot_count "18"     // Domination
+// Team Deathmatch war
+set war_bot_count "18"       // Number of bots for Team Deathmatch
 
-set conf_bot_count "18"    // Kill Confirmed
+// Search and Destroy sd
+set sd_bot_count "18"         // Number of bots for Search and Destroy
 
-set sab_bot_count "18"     // Sabotage
+// Domination dom
+set dom_bot_count "18"       // Number of bots for Domination
 
-set koth_bot_count "18"    // Headquarters
+// Kill Confirmed conf
+set conf_bot_count "18"       // Number of bots for Kill Confirmed
 
-set hp_bot_count "18"      // Hardpoint
+// Sabotage sab
+set sab_bot_count "18"        // Number of bots for Sabotage
 
-set gun_bot_count "18"     // Gun Game
+// Headquarters koth
+set koth_bot_count "18"      // Number of bots for Headquarters
+
+// Hardpoint hp
+set hp_bot_count "18"        // Number of bots for Hardpoint
+
+// Gun Game gun
+set gun_bot_count "18"        // Number of bots for Gun Game
