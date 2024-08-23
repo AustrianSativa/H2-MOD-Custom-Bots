@@ -12,8 +12,11 @@ Drag intro Call of Duty Modern Warfare Remastered 2\user_scripts\mp
 
 
 //////////////////////////////////////////////////
-// BOT COUNT GAMETYPE SETTINGS                  //
-// ADD ALL THIS TO SERVER.cfg !!!               //
+
+BOT COUNT GAMETYPE SETTINGS    
+
+ADD ALL THIS TO SERVER.cfg !!!
+            
 //////////////////////////////////////////////////
 
 // Bot Count HUD
