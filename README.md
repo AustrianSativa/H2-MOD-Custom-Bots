@@ -11,11 +11,11 @@ V1.1: Custom Bot Count Hud
 
 //////////////////////////////////////////////////
 
-BOT COUNT GAMETYPE SETTINGS  
+// BOT COUNT GAMETYPE SETTINGS  
 
-Drag the CustomBot.gsc intro Call of Duty Modern Warfare Remastered 2\user_scripts\mp
+// Drag the CustomBot.gsc intro Call of Duty Modern Warfare Remastered 2\user_scripts\mp
 
-ADD ALL THIS TO SERVER.cfg !!!
+// ADD ALL THIS TO SERVER.cfg !!!
 
 //////////////////////////////////////////////////
 
